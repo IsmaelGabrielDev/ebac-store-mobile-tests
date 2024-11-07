@@ -20,8 +20,19 @@ export const config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     framework: 'mocha',
+    reporters: ['spec',
+        ['allure', {
+            outputDir: 'allure-results',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting: false,
+        }]
+    ],
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
     },
+    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+            await driver.takeScreenshot();
+        
+    }
 }
