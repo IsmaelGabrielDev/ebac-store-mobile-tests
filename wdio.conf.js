@@ -1,11 +1,19 @@
 export const config = {
-    runner: 'local',
-    port: 4723,
+    //runner: 'local',
+    //port: 4723,
+
+    user: 'oauth-ismaelgabriel31-26350',
+    key: 'adb96ac0-2bf9-423c-95ed-9ae0284dc5eb',
+    hostname: 'ondemand.us-west-1.saucelabs.com',
+    port: 443,
+    baseUrl: 'wd/hub',
+
     specs: [
         './test/specs/**/*.js'
     ],   
     maxInstances: 1,
-    capabilities: [{
+    capabilities: [
+       /* {
         platformName: 'Android',
         'appium:deviceName': 'ebac-qe',
         'appium:platformVersion': '11.0',
@@ -13,7 +21,25 @@ export const config = {
         'appium:app': `${process.cwd()}/app/ebacshop.apks`,
         'appium:appWaitActivity': '.MainActivity',
         'appium:disableIdLocatorAutocompletion': true
-    }],
+    }
+    */
+
+    {
+        platformName: 'Android',
+        'appium:app': 'storage:filename=ebacshop.aab', // The filename of the mobile app
+        'appium:deviceName': 'Android GoogleAPI Emulator',
+        'appium:platformVersion': '12.0',
+        'appium:automationName': 'UiAutomator2',
+        'appium:disableIdLocatorAutocompletion': true,
+        'sauce:options': {
+           build: 'appium-build-test-ebacshop',
+           name: 'Ebac Shop Test',
+           deviceOrientation: 'PORTRAIT',
+           appiumVersion: '2.11.0',
+        },
+    }
+],
+
 
     logLevel: 'info',
     waitforTimeout: 10000,
