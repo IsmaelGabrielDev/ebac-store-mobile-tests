@@ -23,7 +23,6 @@ export const config = {
         'appium:disableIdLocatorAutocompletion': true
     }
     */
-
     {
         platformName: 'Android',
         'appium:app': 'storage:filename=ebacshop.aab', // The filename of the mobile app
