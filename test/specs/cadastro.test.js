@@ -3,11 +3,11 @@ import homePage from '../pageobjects/home.page.js'
 import CadastroPage from '../pageobjects/cadastro.page.js'
 import profilePage from '../pageobjects/profile.page.js'
 
-describe('My Login application', () => {
+describe('My Cadastred application', () => {
     it('should login with valid credentials', async () => {
         await homePage.openMenu('profile')
         await homePage.opensingUp()
-        await CadastroPage.preCadastro('Ismael', ' Gabriel', '18 992332555', 'ismael.qa15@ebac.art.br', 'Ismael123*', 'Ismael123*')
+        await CadastroPage.preCadastro('Ismael', ' Gabriel', '18 992332555', 'ismael.qa152@ebac.art.br', 'Ismael123*', 'Ismael123*')
         await homePage.openWishlist()
         await homePage.clickSeta()
         await homePage.openMenu('profile')
