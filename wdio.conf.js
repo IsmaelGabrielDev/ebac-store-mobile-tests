@@ -27,7 +27,7 @@ export const config = {
     {
         platformName: 'Android',
         'appium:app': 'storage:filename=ebacshop.aab', // The filename of the mobile app
-        'appium:deviceName': 'Android GoogleAPI Emulator',
+        'appium:deviceName': 'Google Pixel 6 Pro GoogleAPI Emulator',
         'appium:platformVersion': '12.0',
         'appium:automationName': 'UiAutomator2',
         'appium:disableIdLocatorAutocompletion': true,
@@ -37,8 +37,7 @@ export const config = {
            deviceOrientation: 'PORTRAIT',
            appiumVersion: '2.11.0',
         },
-    }
-],
+    }],
 
 
     logLevel: 'info',
